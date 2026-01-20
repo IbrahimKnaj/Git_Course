@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int ReadPositiveNumber(string Message)
+{
+    int number;
+    do {
+        cout << Message;
+        cin >> number;
+
+    } while (number < 0);
+
+    return number;
+
+}
+
+bool isLeapYear(short year)
+{
+    return ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0)));
+
+}
+
+int main()
+{
+    int year = ReadPositiveNumber("Please Enter a Year To Check if Leap Year or Not ? ");
+
+    if (isLeapYear(year))
+    
+        cout << "\nIt's a Leap Year .";
+    else
+        cout << "\nIt's Not a Leap Year .";
+    
+    system("pause>0");
+    return 0;
+}
